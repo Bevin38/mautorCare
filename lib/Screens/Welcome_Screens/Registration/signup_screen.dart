@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mautorcare/Screens/Welcome_Screens/Registration/user_registration.dart';
 import 'package:mautorcare/Screens/Welcome_Screens/signin_screen.dart';
 import 'package:mautorcare/Widgets/Welcome_Screen/custom_scaffold.dart';
-import 'package:mautorcare/main.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -152,7 +152,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => const HomeWin()));
+                                        builder: (context) =>
+                                            const UserRegistration()));
                               },
                               child: const Text("Sign Up")),
                         ),

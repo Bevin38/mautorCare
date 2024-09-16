@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:mautorcare/src/Screens/Home/homepage.dart';
 
-class InsuranceRegistration extends StatefulWidget {
-  const InsuranceRegistration({super.key});
+class InsuranceInfoScreen extends StatefulWidget {
+  const InsuranceInfoScreen({super.key});
 
   @override
-  State<InsuranceRegistration> createState() => _InsuranceRegistrationState();
+  State<InsuranceInfoScreen> createState() => _InsuranceInfoScreenState();
 }
 
-class _InsuranceRegistrationState extends State<InsuranceRegistration>
-    with SingleTickerProviderStateMixin {
+class _InsuranceInfoScreenState extends State<InsuranceInfoScreen>
+    with TickerProviderStateMixin {
   String? selectedInsurance;
   bool isOthersSelected = true;
 
@@ -370,8 +371,7 @@ class _InsuranceRegistrationState extends State<InsuranceRegistration>
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                                const InsuranceRegistration()));
+                            builder: (context) => const HomePage()));
                   },
                   child: const Text("PROCEED")),
             ),

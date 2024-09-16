@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:mautorcare/Screens/Welcome_Screens/Registration/signup_screen.dart';
-import 'package:mautorcare/Screens/Welcome_Screens/signin_screen.dart';
-import 'package:mautorcare/Widgets/Welcome_Screen/custom_button.dart';
-import 'package:mautorcare/Widgets/Welcome_Screen/custom_scaffold.dart';
+import 'package:mautorcare/src/Components/custom_button.dart';
+import 'package:mautorcare/src/Components/welcome_custom_scaffold.dart';
+import 'package:mautorcare/src/Screens/Auth/Registration/signup_screen.dart';
+import 'package:mautorcare/src/Screens/Auth/signin_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return CustomScaffold(
+    return WelcomeCustomScaffold(
       child: Column(
         children: [
           Flexible(

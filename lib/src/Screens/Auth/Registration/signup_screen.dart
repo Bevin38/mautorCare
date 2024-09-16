@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mautorcare/Screens/Welcome_Screens/Registration/user_registration.dart';
-import 'package:mautorcare/Screens/Welcome_Screens/signin_screen.dart';
-import 'package:mautorcare/Widgets/Welcome_Screen/custom_scaffold.dart';
+import 'package:mautorcare/src/Components/welcome_custom_scaffold.dart';
+import 'package:mautorcare/src/Screens/Auth/Registration/user_info_screen.dart';
+import 'package:mautorcare/src/Screens/Auth/signin_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -15,7 +15,7 @@ final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
-    return CustomScaffold(
+    return WelcomeCustomScaffold(
       child: Column(
         children: [
           const Expanded(
@@ -153,7 +153,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const UserRegistration()));
+                                            const UserInfoScreen()));
                               },
                               child: const Text("Sign Up")),
                         ),

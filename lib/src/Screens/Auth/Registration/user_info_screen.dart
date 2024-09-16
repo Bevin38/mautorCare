@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:mautorcare/Screens/Welcome_Screens/Registration/insurance_registration.dart';
-//import 'package:mautorcare/Widgets/Welcome_Screen/custom_scaffold.dart';
+import 'package:mautorcare/src/Screens/Auth/Registration/insurance_info_screen.dart';
 
-class UserRegistration extends StatefulWidget {
-  const UserRegistration({super.key});
+class UserInfoScreen extends StatefulWidget {
+  const UserInfoScreen({super.key});
 
   @override
-  State<UserRegistration> createState() => _UserRegistrationState();
+  State<UserInfoScreen> createState() => _UserInfoScreenState();
 }
 
-class _UserRegistrationState extends State<UserRegistration> {
+class _UserInfoScreenState extends State<UserInfoScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
@@ -263,7 +262,7 @@ class _UserRegistrationState extends State<UserRegistration> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const InsuranceRegistration()));
+                                            const InsuranceInfoScreen()));
                               },
                               child: const Text("PROCEED")),
                         ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
-class CustomScaffold extends StatelessWidget {
-  const CustomScaffold({super.key, this.child});
+class WelcomeCustomScaffold extends StatelessWidget {
+  const WelcomeCustomScaffold({super.key, this.child});
 
   final Widget? child;
 

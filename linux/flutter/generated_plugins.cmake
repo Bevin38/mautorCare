@@ -4,6 +4,7 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   audioplayers_linux
+  desktop_webview_auth
   file_selector_linux
   rive_common
   sqlite3_flutter_libs

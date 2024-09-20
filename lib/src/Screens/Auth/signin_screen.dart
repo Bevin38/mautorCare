@@ -2,9 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mautorcare/firebase_options.dart';
+import 'package:mautorcare/src/Components/navbar.dart';
 import 'package:mautorcare/src/Components/welcome_custom_scaffold.dart';
 import 'package:mautorcare/src/Screens/Auth/Registration/signup_screen.dart';
-import 'package:mautorcare/src/Screens/Home/homepage.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -179,7 +179,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                const HomePage()));
+                                                const Navbar()));
                                   },
                                   child: const Text("Sign In")),
                             ),

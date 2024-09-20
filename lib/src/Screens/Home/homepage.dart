@@ -1,64 +1,88 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:mautorcare/firebase_options.dart';
-import 'package:mautorcare/src/Screens/Chatbot/chatbot_screen.dart';
+import 'package:mautorcare/src/Components/weather_widget.dart';
+import 'package:mautorcare/src/Models/accident_card.dart';
+import 'package:mautorcare/src/Screens/Home/emergency_screen.dart';
+import 'package:mautorcare/src/Screens/Home/weather_details.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  late final TextEditingController _email;
-  late final TextEditingController _password;
-
-  @override
-  void initState() {
-    _email = TextEditingController();
-    _password = TextEditingController();
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _email.dispose();
-    _password.dispose();
-    super.dispose();
-  }
+class Homepage extends StatelessWidget {
+  const Homepage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("SPACE"),
-      ),
-      body: FutureBuilder(
-        future: Firebase.initializeApp(
-          options: DefaultFirebaseOptions.currentPlatform,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(60),
+        child: AppBar(
+          title: const Text('HOME'),
+          actions: [
+            Container(
+              margin: EdgeInsets.only(right: 20, top: 5),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                  backgroundColor: const Color.fromARGB(255, 32, 3, 199)
+                      .withOpacity(0.9), // Background color
+                  // onPrimary: Colors.white, // Text color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const WeatherDetailScreen()),
+                  );
+                },
+                child: const WeatherWidget(),
+              ),
+            ),
+          ],
         ),
-        builder: (context, snapshot) {
-          switch (snapshot.connectionState) {
-            case ConnectionState.done:
-              Container(
-                child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const ChatbotScreen()));
-                    },
-                    child: const Text("to Chatbot")),
-              );
-              print(FirebaseAuth.instance.currentUser);
-              return const Text("DONE");
-
-            default:
-              return const Text("Loading...");
-          }
-        },
+      ),
+      body: Stack(
+        children: [
+          ListView.builder(
+            itemCount: 10, // Number of accidents
+            itemBuilder: (context, index) {
+              return const Accidentcard();
+            },
+          ),
+          Positioned(
+            bottom: 40,
+            left: 0,
+            right: 0,
+            child: Center(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red, // Background color of button
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 80, vertical: 15),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    elevation: 20,
+                    shadowColor: Colors.black.withOpacity(0.9)),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const EmergencyScreen()),
+                  );
+                },
+                child: const Text(
+                  'Emergency Alert',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

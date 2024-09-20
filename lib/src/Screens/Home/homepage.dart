@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mautorcare/src/Components/weather_widget.dart';
 import 'package:mautorcare/src/Models/accident_card.dart';
 import 'package:mautorcare/src/Screens/Home/emergency_screen.dart';
-import 'package:mautorcare/src/Screens/Home/weather_details.dart';
+import 'package:mautorcare/src/Screens/Home/weather_details_screen.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -32,7 +32,7 @@ class Homepage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const WeatherDetailScreen()),
+                        builder: (context) => const WeatherDetailsScreen()),
                   );
                 },
                 child: const WeatherWidget(),
@@ -56,7 +56,8 @@ class Homepage extends StatelessWidget {
             child: Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red, // Background color of button
+                    backgroundColor: const Color.fromARGB(
+                        255, 206, 32, 41), // Background color of button
                     padding: const EdgeInsets.symmetric(
                         horizontal: 80, vertical: 15),
                     shape: RoundedRectangleBorder(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import 'package:mautorcare/src/Screens/Home/weather_details.dart';
+import 'package:mautorcare/src/Screens/Home/weather_details_screen.dart';
 
 class WeatherWidget extends StatefulWidget {
   const WeatherWidget({super.key});
@@ -55,7 +55,7 @@ class _WeatherWidgetState extends State<WeatherWidget> {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const WeatherDetailScreen()),
+          MaterialPageRoute(builder: (context) => const WeatherDetailsScreen()),
         );
       },
       child: Container(

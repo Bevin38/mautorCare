@@ -11,6 +11,7 @@ list(APPEND FLUTTER_PLUGIN_LIST
   firebase_core
   firebase_storage
   geolocator_windows
+  permission_handler_windows
   rive_common
   sqlite3_flutter_libs
   url_launcher_windows

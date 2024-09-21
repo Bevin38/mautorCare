@@ -17,6 +17,7 @@ class _InsuranceMainState extends State<InsuranceScreen> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 195, 189, 218),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: const Color.fromARGB(207, 47, 10, 116),
         title: const Text(
           "INSURANCE",

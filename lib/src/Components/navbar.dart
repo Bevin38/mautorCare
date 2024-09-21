@@ -1,12 +1,11 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:mautorcare/src/Constants/RIVE/nav_item_model.dart';
+import 'package:mautorcare/src/Screens/Camera/camera_choice_screen.dart';
 import 'package:mautorcare/src/Screens/Chatbot/chatbot_screen.dart';
 import 'package:mautorcare/src/Screens/Home/homepage.dart';
 import 'package:mautorcare/src/Screens/Insurance/insurance_screen.dart';
 import 'package:mautorcare/src/Screens/Profile/profile_screen.dart';
-import 'package:mautorcare/src/Screens/QR_Scanner/qr_screen.dart';
 import 'package:rive/rive.dart';
 
 const Color bottomNavBgColor = Color(0xFF17203A);
@@ -103,7 +102,7 @@ class _BottomNavAnimatedState extends State<Navbar> {
         children: const [
           Homepage(),
           ChatbotScreen(),
-          QrScreen(),
+          CameraChoiceScreen(),
           InsuranceScreen(),
           ProfileScreen(),
         ],

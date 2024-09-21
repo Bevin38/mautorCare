@@ -10,7 +10,7 @@ plugins {
 
 android {
     namespace = "com.example.mautorcare"
-    compileSdkVersion 33
+    compileSdkVersion 34
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
     ndkVersion = "25.1.8937393"
@@ -29,12 +29,11 @@ android {
         applicationId = "com.example.mautorcare"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
         minSdkVersion 24
         targetSdkVersion 33
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+
     }
 
     buildTypes {

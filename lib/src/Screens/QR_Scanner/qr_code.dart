@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mautorcare/src/Components/navbar.dart';
 import 'package:pretty_qr_code/pretty_qr_code.dart';
 
 class QrCode extends StatefulWidget {
@@ -15,6 +16,18 @@ class _GenerateCodePageState extends State<QrCode> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          color: Colors.black,
+          iconSize: 35,
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Navbar()),
+            );
+// Navigate back to the previous screen
+          },
+        ),
         title: const Text("Displaying QR code"),
         actions: [
           IconButton(

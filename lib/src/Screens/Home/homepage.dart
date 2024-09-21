@@ -13,6 +13,7 @@ class Homepage extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60),
         child: AppBar(
+          automaticallyImplyLeading: false,
           title: const Text('HOME'),
           actions: [
             Container(

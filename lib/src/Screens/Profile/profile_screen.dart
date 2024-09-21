@@ -18,10 +18,7 @@ class _ProfileState extends State<ProfileScreen> {
     //var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(LineAwesomeIcons.angle_left_solid),
-        ),
+        automaticallyImplyLeading: false,
         title: const Align(
           child: Text(
             "Profile",
